@@ -52,7 +52,7 @@ eksctl create cluster --name cluster-name  \
 --zones <AZ-1>,<AZ-2>
 
 ```
-eksctl create cluster --name ashokit-cluster --region ap-south-1 --node-type t2.medium  --zones ap-south-1a,ap-south-1b
+eksctl create cluster --name new-cluster --region ap-south-1 --node-type t2.medium  --zones ap-south-1a,ap-south-1b
 ```
 
 Note: Cluster creation will take 5 to 10 mins of time (we have to wait). After cluster created we can check nodes using below command.	
@@ -183,7 +183,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/ashokitschool/maven-web-app.git'
+                git 'https://github.com/Lakshmi777-dev/maven-web-app.git'
             }
         }
         stage('Maven Build') {
@@ -193,7 +193,7 @@ pipeline {
         }
         stage('Docker Image') {
             steps {
-                sh 'docker build -t ashokit/mavenwebapp .'
+                sh 'docker build -t Lakshmi777-dev/mavenwebapp .'
             }
         }
         stage('k8s deployment') {
